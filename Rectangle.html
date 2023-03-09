@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="200" height="300"></canvas>
+<script>
+  let Rectangle = function (width,height){
+    this.width = width;
+    this.height = height;
+    this.getWidth = function (){
+      return this.width;
+    }
+    this.getHeight = function (){
+      return this.height;
+    }
+    this.setWidth = function (width){
+      this.width = width;
+    }
+    this.setHeight = function (height){
+      this.height = height;
+    }
+    this.getArea = function (){
+      return width * height;
+    }
+    this.getPerimeter = function (){
+      return (width + height) * 2;
+    }
+  }
+  let rec = new Rectangle(200,90);
+  let width = rec.getWidth();
+  let height = rec.getHeight()
+  let area = rec.getArea();
+  let per = rec.getPerimeter();
+  document.write('Area = ' + area + '; Perimeter = ' + per )
+
+
+  let canvas = document.getElementById("myCanvas");
+  let ctx = canvas.getContext('2d');
+  ctx.fillStyle='#fa2ae9';
+  ctx.fillRect(30, 30, width, height)
+</script>
 </body>
 </html>
